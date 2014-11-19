@@ -2,6 +2,8 @@
 var debug = require('debug')('postalert');
 var app = require('../app');
 
+console.log("environment port: ",process.env.SERV_PORT);
+
 app.set('port', process.env.SERV_PORT || 3000);
 
 var server = app.listen(app.get('port'), function() {
