@@ -28,6 +28,27 @@
 
   <body>
 
+      <!-- Modal -->
+      <div class="modal fade" id="pcModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                      <h4 class="modal-title centered" id="myModalLabel">Please enter your postal code.</h4>
+                  </div>
+                  <div class="modal-body centered">
+                      <form class="form-inline" role="form" action="/"  method='post'>
+                      	<div class="form-group">
+                      	    <input type="text" class="form-control" id="InputPostalCode" name="InputPostalCode" placeholder="">
+                            <button type="submit" class="btn btn-primary">Submit</button> 
+                      	</div>
+                      </form>
+                  </div>
+                 
+              </div>
+          </div>
+      </div>
+
     <!-- Fixed navbar -->
     <div class="navbar navbar-default navbar-fixed-top">
       <div class="container">
@@ -37,7 +58,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><b>Post Alert</b></a>
+          <a class="navbar-brand" href="/"><b>Post Alert</b></a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -54,16 +75,11 @@
 					<h1>Eliminate wasted trips to<br/>
 					to an empty mailbox.</h1>
                     <h4> Get notified on your phone when your have mail. </h4>
-                    <h4> Only $59 
-					<form class="form-inline" role="form">
-					  <div class="form-group">
-					    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter your email address">
-					  </div>
-					  <button type="submit" class="btn btn-warning btn-lg">Preorder Now!</button>
-					</form>					
+                    <h4> Only $59 (regular $79)</h4>
+					  <button type="submit" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#pcModal">Buy Now!</button>
 				</div><!-- /col-lg-6 -->
 				<div class="col-lg-6">
-					<img class="img-responsive" src="/img/cpbox2.jpg" alt="">
+					<img class="img-responsive" src="/img/cpbox4.jpg" alt="">
 				</div><!-- /col-lg-6 -->
 				
 			</div><!-- /row -->
@@ -106,12 +122,7 @@
 		<hr>
 		<div class="row centered">
 			<div class="col-lg-6 col-lg-offset-3">
-				<form class="form-inline" role="form">
-				  <div class="form-group">
-				    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter your email address">
-				  </div>
-				  <button type="submit" class="btn btn-warning btn-lg">Preorder Now!</button>
-				</form>					
+				  <button type="submit" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#pcModal">Buy Now!</button>				
 			</div>
 			<div class="col-lg-3"></div>
 		</div><!-- /row -->
@@ -154,7 +165,7 @@
                       </div>
 				    </div>
 				    <div class="item">
-				      <img src="/img/sphone2.jpg" alt="">
+				      <img src="/img/sphone4.jpg" alt="">
                       <div class="carousel-caption">
                           <h3>Smartphone App</h3>
                           <p>iOS or Android</p>
@@ -170,12 +181,7 @@
 		<hr>
 		<div class="row centered">
 			<div class="col-lg-6 col-lg-offset-3">
-				<form class="form-inline" role="form">
-				  <div class="form-group">
-				    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter your email address">
-				  </div>
-				  <button type="submit" class="btn btn-warning btn-lg">Preorder Now!</button>
-				</form>					
+				  <button type="submit" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#pcModal">Buy Now!</>					
 			</div>
 			<div class="col-lg-3"></div>
 		</div><!-- /row -->
