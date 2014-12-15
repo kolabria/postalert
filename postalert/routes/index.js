@@ -29,4 +29,22 @@ router.get('/:pc?', function(req, res) {
 
 });
 
+/* GET signup page. */
+router.get('/signup', function(req, res) {
+  res.render('signup');
+});
+
+/* post home page. */
+router.post('/po', function(req, res) {
+    //console.log('postal code: ',req.body.InputPostalCode);
+  res.render('thankyou');
+
+});
+
+
+/* GET thankyou page. */
+router.get('/thankyou', function(req, res) {
+  res.render('thankyou');
+});
+
 module.exports = router;
