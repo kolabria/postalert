@@ -47,14 +47,15 @@ html(lang='en')
                 h4.whitetext
                   | Pré-commande maintenant (pas de carte de crédit nécessaire) d'avoir le prix de lancement de 99 $ (régulier 120 $)   
                   h4
-                    form(role='form', action='/po', method='post')
+                    form#form4(role='form', name='form4', accept-charset='UTF-8', autocomplete='off', enctype='multipart/form-data', method='post', novalidate='', action='https://kolabria.wufoo.com/forms/rtjllwv1yirkz8/#public')
                       .form-group
-                        input#exampleInputName.form-control(type='text', placeholder='nom')
+                        input#Field3.form-control(name='Field3', type='text', value='', maxlength='255', tabindex='1', onkeyup='', placeholder='nom' )
                       .form-group
-                        input#exampleInputPcode.form-control(type='text', placeholder='code postal')
+                        input#Field4.form-control(name='Field4', type='text', value='', maxlength='255', tabindex='2', onkeyup='', placeholder='code postal')
                       .form-group
-                        input#exampleInputEmail1.form-control(type='email', placeholder='courrier électronique')
-                      button.btn.btn-warning.btn-lg(type='submit') Précommander
+                        input#Field5.form-control(name='Field5', type='email', spellcheck='false', value='', maxlength='255', tabindex='3', placeholder='courrier électronique')
+                      button#saveForm.btn.btn-warning.btn-lg(name='saveForm', type='submit', value='Submit') Précommander
+                      input#idstamp(type='hidden', name='idstamp', value='h7k76izzbYnSPx2te6zvCH4H9BzF2VvF44I4mEY+kpg=')
             else
               h1
                 | PostAlert will be available
@@ -63,14 +64,15 @@ html(lang='en')
               h4.whitetext
                 | Pre-order now (no credit card required) to lock in the introductory price of $99 (regular $120)   
                 h4
-              form(role='form', action='/po', method='post')
-                .form-group
-                  input#exampleInputName.form-control(type='text', placeholder='Name')
-                .form-group
-                  input#exampleInputPcode.form-control(type='text', placeholder='Postal Code')
-                .form-group
-                  input#exampleInputEmail1.form-control(type='email', placeholder='Email address')
-                button.btn.btn-warning.btn-lg(type='submit') Pre-Order
+                  form#form4(role='form', name='form4', accept-charset='UTF-8', autocomplete='off', enctype='multipart/form-data', method='post', novalidate='', action='https://kolabria.wufoo.com/forms/rtjllwv1yirkz8/#public')
+                    .form-group
+                      input#Field3.form-control(name='Field3', type='text', value='', maxlength='255', tabindex='1', onkeyup='', placeholder='Name' )
+                    .form-group
+                      input#Field4.form-control(name='Field4', type='text', value='', maxlength='255', tabindex='2', onkeyup='', placeholder='Postal Code')
+                    .form-group
+                      input#Field5.form-control(name='Field5', type='email', spellcheck='false', value='', maxlength='255', tabindex='3', placeholder='Email address')
+                    button#saveForm.btn.btn-warning.btn-lg(name='saveForm', type='submit', value='Submit') Pre-Order
+                    input#idstamp(type='hidden', name='idstamp', value='h7k76izzbYnSPx2te6zvCH4H9BzF2VvF44I4mEY+kpg=')                    
           // /col-lg-6
           .col-lg-6
             img.img-responsive(src='/img/cpbox4.jpg', alt='')
