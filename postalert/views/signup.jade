@@ -1,3 +1,92 @@
-include ../public/signup.html
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    link(rel='shortcut icon', href='/img/favicon.png')
+    title PostAlert - No more wasted trips to an empty mailbox
+    // Bootstrap core CSS
+    link(href='/css/bootstrap.css', rel='stylesheet')
+    // Custom styles for this template
+    link(href='/css/main.css', rel='stylesheet')
+    // Fonts from Google Fonts
+    link(href='http://fonts.googleapis.com/css?family=Lato:300,400,900', rel='stylesheet', type='text/css')
+    // HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
+    //if lt IE 9
+      script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+      script(src='https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js')
+  body
+    // Fixed navbar
+    .navbar.navbar-default.navbar-fixed-top
+      .container
+        .navbar-header
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href='/')
+            b Post Alert
+        .navbar-collapse.collapse
+          ul.nav.navbar-nav.navbar-right
+            li
+              if lang == 'fr'
+                a(href='/signup/en') English
+              else
+                a(href='/signup/fr') français
+        // /.nav-collapse
+    #headerwrap
+      .container
+        .row
+          .col-lg-6
+            if lang == 'fr'
+                h1
+                  | PostAlert sera disponible au printemps 2015
+                h4.whitetext
+                  | Pré-commande maintenant (pas de carte de crédit nécessaire) d'avoir le prix de lancement de 99 $ (régulier 120 $)   
+                  h4
+                    form(role='form', action='/po', method='post')
+                      .form-group
+                        input#exampleInputName.form-control(type='text', placeholder='nom')
+                      .form-group
+                        input#exampleInputPcode.form-control(type='text', placeholder='code postal')
+                      .form-group
+                        input#exampleInputEmail1.form-control(type='email', placeholder='courrier électronique')
+                      button.btn.btn-warning.btn-lg(type='submit') Précommander
+            else
+              h1
+                | PostAlert will be available
+                br
+                | in spring 2015
+              h4.whitetext
+                | Pre-order now (no credit card required) to lock in the introductory price of $99 (regular $120)   
+                h4
+              form(role='form', action='/po', method='post')
+                .form-group
+                  input#exampleInputName.form-control(type='text', placeholder='Name')
+                .form-group
+                  input#exampleInputPcode.form-control(type='text', placeholder='Postal Code')
+                .form-group
+                  input#exampleInputEmail1.form-control(type='email', placeholder='Email address')
+                button.btn.btn-warning.btn-lg(type='submit') Pre-Order
+          // /col-lg-6
+          .col-lg-6
+            img.img-responsive(src='/img/cpbox4.jpg', alt='')
+          // /col-lg-6
+        // /row
+      // /container
+    // /headerwrap
+    .container
+      br
+      p.centered.footnote Template by BlackTie.co - Attribution License 3.0
+    // /container
+    //
+      Bootstrap core JavaScript
+      ==================================================
+    // Placed at the end of the document so the pages load faster
+    script(src='https://code.jquery.com/jquery-1.10.2.min.js')
+    script(src='/js/bootstrap.min.js')
 
 

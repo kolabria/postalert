@@ -1,3 +1,73 @@
-include ../public/thankyou.html
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    link(rel='shortcut icon', href='/img/favicon.png')
+    title PostAlert - No more wasted trips to an empty mailbox
+    // Bootstrap core CSS
+    link(href='/css/bootstrap.css', rel='stylesheet')
+    // Custom styles for this template
+    link(href='/css/main.css', rel='stylesheet')
+    // Fonts from Google Fonts
+    link(href='http://fonts.googleapis.com/css?family=Lato:300,400,900', rel='stylesheet', type='text/css')
+    // HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
+    //if lt IE 9
+      script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+      script(src='https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js')
+  body
+    // Fixed navbar
+    .navbar.navbar-default.navbar-fixed-top
+      .container
+        .navbar-header
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href='/')
+            b Post Alert
+        .navbar-collapse.collapse
+          ul.nav.navbar-nav.navbar-right
+            li
+              if lang == 'fr'
+                a(href='/thankyou/en') English
+              else
+                a(href='/thankyou/fr') français
+        // /.nav-collapse
+    #headerwrap
+      .container
+        .row
+          .col-lg-6
+            if lang == 'fr'
+                h1 Merci de votre précommande
+                h4.whitetext
+                    | Vous serez averti par email quand il est temps pour finaliser votre commande.
+                h4
+            else
+              h1 Thank you for your Pre-order 
+              h4.whitetext
+                | You will be notified by email when it is time to finalize your order.  
+              h4
+          // /col-lg-6
+          .col-lg-6
+            img.img-responsive(src='/img/cpbox4.jpg', alt='')
+          // /col-lg-6
+        // /row
+      // /container
+    // /headerwrap
+    .container
+      br
+      p.centered.footnote Template by BlackTie.co - Attribution License 3.0
+    // /container
+    //
+      Bootstrap core JavaScript
+      ==================================================
+    // Placed at the end of the document so the pages load faster
+    script(src='https://code.jquery.com/jquery-1.10.2.min.js')
+    script(src='/js/bootstrap.min.js')
+
 
 

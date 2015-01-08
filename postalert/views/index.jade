@@ -1,3 +1,193 @@
-include ../public/index.html
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    link(rel='shortcut icon', href='/img/favicon.png')
+    title PostAlert - No more wasted trips to an empty mailbox
+    // Bootstrap core CSS
+    link(href='/css/bootstrap.css', rel='stylesheet')
+    // Custom styles for this template
+    link(href='/css/main.css', rel='stylesheet')
+    // Fonts from Google Fonts
+    link(href='http://fonts.googleapis.com/css?family=Lato:300,400,900', rel='stylesheet', type='text/css')
+    // HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
+    //if lt IE 9
+      script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+      script(src='https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js')
+  body
+    // Fixed navbar
+    .navbar.navbar-default.navbar-fixed-top
+      .container
+        .navbar-header
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href='/')
+            b Post Alert
+        .navbar-collapse.collapse
+          ul.nav.navbar-nav.navbar-right
+            li
+              if lang == 'fr'
+                a(href='/en') English
+              else
+                a(href='/fr') français
+        // /.nav-collapse
+    #headerwrap
+      .container
+        .row
+          .col-lg-6
+            if lang == 'fr'
+               h1
+                 | Ne vous déplacez plus inutilement
+                 br
+                 | à votre boîte postale.
+               h4.whitetext  Soyez avisé sur votre téléphone lorsque vous recevez du courrier 
+               h4.whitetext  Seulement 99$ (habituellement 120$)
+               a.btn.btn-warning.btn-lg(href='/signup')
+                 b Acheter
+            else
+                h1
+                  | Eliminate wasted trips to
+                  br
+                  | to an empty mailbox
+                h4.whitetext  Get notified on your phone when your have mail. 
+                h4.whitetext  Only $99 (regular $120)
+                a.btn.btn-warning.btn-lg(href='/signup')
+                  b Buy Now!
+          // /col-lg-6
+          .col-lg-6
+            img.img-responsive(src='/img/cpbox4.jpg', alt='')
+          // /col-lg-6
+        // /row
+      // /container
+    // /headerwrap
+    .container
+      .row.mt.centered
+        .col-lg-6.col-lg-offset-3
+          if lang == 'fr'
+            h1 Ne vous déplacez plus jamais pour une boîte postale vide
+            h3 
+              | Ne perdez plus votre temps à vous déplacer dans la canicule, le froid, la pluie ou la neige pour une boîte postale 
+              | vide. Recevez un message sur votre téléphone dès que vous recevez du courrier. Rendez vos déplacements efficaces.
+          else
+            h1 Never visit an empty mailbox again!
+            h3
+              | Don't waste your time in the heat, cold, wet or snow checking an empty mailbox.  Recieve a message on your phone whenever you get mail so you can make your trip worthwhile.
+      // /row
+      .row.mt.centered
+        .col-lg-4
+          img(src='/img/cpbox-oldman.jpg', width='180', alt='')
+          if lang == 'fr'
+              h4 La sécurité pour vos proches
+              p
+                | Assurez-vous que vos proches ne se déplacent pas inutilement à leur boîte postale. Encore mieux, faites 
+                | l’aller-retour vous-même seulement lorsque le déplacement en vaudra la peine.
+          else          
+            h4 Saftey for loved ones
+            p
+              | Ensure that if loved ones make a trip to the mailbox that it is not empty. Or even better make the trip yourself when you know it will be worthwhile.
+        // /col-lg-4
+        .col-lg-4
+          img(src='/img/cpbox-broken.jpg', width='180', alt='')
+          if lang == 'fr'
+            h4 Soyez avisé des déplacements non-autorisés
+            p
+              | Recevez des notifications sur votre téléphone lorsque vous avez du courrier et lorsque celui-ci est ramassé. 
+              | Ainsi, vous saurez si votre courrier a disparu.
+          else
+            h4 Immediately know about unauthorized access
+            p
+              | Receive phone notifications both when mail is added and when removed.  You will always know if something has disappeared.
+        // /col-lg-4
+        .col-lg-4
+          img(src='/img/CBTW3P.jpg', width='180', height='135', alt='')
+          if lang == 'fr'
+              h4 Soyez plusieurs à recevoir les notifications
+              p
+                | Tout le monde pourra savoir s’il y a du courrier et s’il a été ramassé. Ne faites plus jamais de déplacement en 
+                | double à votre boîte postale. Vous pourrez même donner accès à un voisin lorsque vous partez en voyage !
+          else
+            h4 Have notifications sent to multiple people
+            p
+              | Everyone will know when there is mail and when it has been picked up. Avoid redundant trips to the mailbox. Give access to a neighbour when you travel!
+        // /col-lg-4
+      // /row
+    // /container
+    .container
+      hr
+      .row.centered
+        .col-lg-6.col-lg-offset-3
+          a.btn.btn-warning.btn-lg(href='/signup')
+            if lang == 'fr'
+              b Acheter
+            else      
+              b Buy Now!
+        .col-lg-3
+      // /row
+      hr
+    // /container
+    .container
+      .row.mt.centered
+        .col-lg-6.col-lg-offset-3
+          if lang == 'fr'
+              h1  C’est aussi simple et facile à installer qu’à utiliser.
+          else
+            h1
+              | Simple and easy
+              br
+              |  to install and use
+      // /row
+      .row.mt.centered
+        .col-lg-6.col-lg-offset-3
+          #carousel-example-generic.carousel.slide(data-ride='carousel', data-interval='3000')
+            // Indicators
+            ol.carousel-indicators
+              li.active(data-target='#carousel-example-generic', data-slide-to='0')
+              li(data-target='#carousel-example-generic', data-slide-to='1')
+              li(data-target='#carousel-example-generic', data-slide-to='2')
+            // Wrapper for slides
+            .carousel-inner
+              .item.active
+                img(src='/img/gw1.jpg', alt='')
+                .carousel-caption
+                  h3 Gateway
+                  p Attach to window facing mailbox
+              .item
+                img(src='/img/sensor3.jpg', alt='')
+                .carousel-caption
+                  h3 Mailbox Sensor
+                  p Place in mailbox
+              .item
+                img(src='/img/sphone4.jpg', alt='')
+                .carousel-caption
+                  h3 Smartphone App
+                  p iOS or Android
+        // /col-lg-8
+      // /row
+    .container
+      hr
+      .row.centered
+        .col-lg-6.col-lg-offset-3
+          a.btn.btn-warning.btn-lg(href='/signup')
+            if lang == 'fr'
+              b Acheter
+             else      
+              b Buy Now!
+        .col-lg-3
+      // /row
+      hr
+      p.centered.footnote Template by BlackTie.co - Attribution License 3.0
+    // /container
+    //
+      Bootstrap core JavaScript
+      ==================================================
+    // Placed at the end of the document so the pages load faster
+    script(src='https://code.jquery.com/jquery-1.10.2.min.js')
+    script(src='/js/bootstrap.min.js')
 
 
