@@ -58,8 +58,20 @@ html(lang='en')
         // /row
       // /container
     // /headerwrap
+    br
     .container
-      br
+      .br
+      .row.centered
+        .col-lg-4
+          if lang == 'fr'
+            a(href='mailto:info@postalert.ca?Subject=info') Contactez-nous
+          else
+            a(href='mailto:info@postalert.ca?Subject=info') Contact Us
+        .col-lg-4
+          p 
+        .col-lg-4
+          a(href='https://mixpanel.com/f/partner')
+           img(src='//cdn.mxpnl.com/site_media/images/partner/badge_light.png', alt='Mobile Analytics')
       p.centered.footnote Template by BlackTie.co - Attribution License 3.0
     // /container
     //

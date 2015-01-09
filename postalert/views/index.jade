@@ -18,7 +18,7 @@ html(lang='en')
     //if lt IE 9
       script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
       script(src='https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js')
-  body
+  body(onload='mixpanel.track("Load Landing Page",{ "lang": "#{lang}"})')
     // Fixed navbar
     .navbar.navbar-default.navbar-fixed-top
       .container
@@ -48,7 +48,7 @@ html(lang='en')
                  | à votre boîte postale.
                h4.whitetext  Soyez avisé sur votre téléphone lorsque vous recevez du courrier 
                h4.whitetext  Seulement 99$ (habituellement 120$)
-               a.btn.btn-warning.btn-lg(href='/signup')
+               a.btn.btn-warning.btn-lg(href='/signup',onclick='mixpanel.track("BuyNow",{"place": "top", "lang": "#{lang}"})')
                  b Acheter
             else
                 h1
@@ -57,7 +57,7 @@ html(lang='en')
                   | to an empty mailbox
                 h4.whitetext  Get notified on your phone when your have mail. 
                 h4.whitetext  Only $99 (regular $120)
-                a.btn.btn-warning.btn-lg(href='/signup')
+                a.btn.btn-warning.btn-lg(href='/signup',onclick='mixpanel.track("BuyNow",{"place": "top", "lang": "#{lang}"})')
                   b Buy Now!
           // /col-lg-6
           .col-lg-6
@@ -122,7 +122,7 @@ html(lang='en')
       hr
       .row.centered
         .col-lg-6.col-lg-offset-3
-          a.btn.btn-warning.btn-lg(href='/signup')
+          a.btn.btn-warning.btn-lg(href='/signup',onclick='mixpanel.track("BuyNow",{"place": "middle", "lang": "#{lang}"})')
             if lang == 'fr'
               b Acheter
             else      
@@ -173,7 +173,7 @@ html(lang='en')
       hr
       .row.centered
         .col-lg-6.col-lg-offset-3
-          a.btn.btn-warning.btn-lg(href='/signup')
+          a.btn.btn-warning.btn-lg(href='/signup',onclick='mixpanel.track("BuyNow",{"place": "bottom", "lang": "#{lang}"})')
             if lang == 'fr'
               b Acheter
              else      
@@ -181,7 +181,20 @@ html(lang='en')
         .col-lg-3
       // /row
       hr
-      p.centered.footnote Template by BlackTie.co - Attribution License 3.0
+      .container
+        br
+        .row.centered
+            .col-lg-4
+                if lang == 'fr'
+                  a(href='mailto:info@postalert.ca?Subject=info') Contactez-nous
+                else
+                  a(href='mailto:info@postalert.ca?Subject=info') Contact Us
+             .col-lg-4
+                p 
+             .col-lg-4
+                 a(href='https://mixpanel.com/f/partner')
+                   img(src='//cdn.mxpnl.com/site_media/images/partner/badge_light.png', alt='Mobile Analytics')
+        p.centered.footnote Template by BlackTie.co - Attribution License 3.0
     // /container
     //
       Bootstrap core JavaScript
@@ -189,5 +202,12 @@ html(lang='en')
     // Placed at the end of the document so the pages load faster
     script(src='https://code.jquery.com/jquery-1.10.2.min.js')
     script(src='/js/bootstrap.min.js')
-
+    // start Mixpanel
+    script(type='text/javascript').
+      (function(f,b){if(!b.__SV){var a,e,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");
+      for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=f.createElement("script");a.type="text/javascript";a.async=!0;a.src="//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";e=f.getElementsByTagName("script")[0];e.parentNode.insertBefore(a,e)}})(document,window.mixpanel||[]);
+      mixpanel.init("1a3f9a0a971a1ae700d1015549dfa2d0");
+    // end Mixpanel
+   
+      
 
