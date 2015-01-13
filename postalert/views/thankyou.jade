@@ -6,7 +6,7 @@ html(lang='en')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     meta(name='description', content='')
     meta(name='author', content='')
-    link(rel='shortcut icon', href='/img/favicon.ico')
+    link(rel='shortcut icon', href='/img/envelope_sm.jpg')
     if lang == 'fr'
       title PostAlert - Ne vous déplacez plus inutilement à votre boîte postale.
     else
@@ -56,7 +56,10 @@ html(lang='en')
               h4
           // /col-lg-6
           .col-lg-6
-            img.img-responsive(src='/img/cpbox4.jpg', alt='')
+            if lang == 'fr'
+              img.img-responsive(src='/img/KOL_Image_500X500_0000_FR.jpg', alt='')
+            else
+              img.img-responsive(src='/img/KOL_Image_500X500_0001_EN.jpg', alt='')
           // /col-lg-6
         // /row
       // /container

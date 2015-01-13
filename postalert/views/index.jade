@@ -6,7 +6,7 @@ html(lang='en')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     meta(name='description', content='')
     meta(name='author', content='')
-    link(rel='shortcut icon', href='/img/favicon.ico')
+    link(rel='shortcut icon', href='/img/envelope_sm.jpg')
     if lang == 'fr'
       title PostAlert - Ne vous déplacez plus inutilement à votre boîte postale.
     else
@@ -64,7 +64,10 @@ html(lang='en')
                   b Buy Now!
           // /col-lg-6
           .col-lg-6
-            img.img-responsive(src='/img/cpbox4.jpg', alt='')
+           if lang == 'fr'
+             img.img-responsive(src='/img/KOL_Image_500X500_0000_FR.jpg', alt='')
+           else
+             img.img-responsive(src='/img/KOL_Image_500X500_0001_EN.jpg', alt='')
           // /col-lg-6
         // /row
       // /container
@@ -149,27 +152,55 @@ html(lang='en')
         .col-lg-6.col-lg-offset-3
           #carousel-example-generic.carousel.slide(data-ride='carousel', data-interval='3000')
             // Indicators
-            ol.carousel-indicators
+            ol.carousel-indicators.carousel-indicators-custom
               li.active(data-target='#carousel-example-generic', data-slide-to='0')
               li(data-target='#carousel-example-generic', data-slide-to='1')
               li(data-target='#carousel-example-generic', data-slide-to='2')
             // Wrapper for slides
             .carousel-inner
               .item.active
-                img(src='/img/gw1.jpg', alt='')
-                .carousel-caption
-                  h3 Gateway
-                  p Attach to window facing mailbox
+                img(src='/img/gw_300x300.png', alt='')
+                .carousel-caption.carousel-caption-custom
+                    if lang == 'fr'                         
+                        h3 
+                          | Passerelle 
+                          br
+                          | domestique
+                        h5 
+                          | Fixer sur la fenêtre donnant
+                          br
+                          | sur la boîte aux lettres
+                    else                        
+                      h3 Home Gateway
+                      h5 
+                        | Attach to window
+                        br
+                        | facing mailbox
               .item
-                img(src='/img/sensor3.jpg', alt='')
-                .carousel-caption
-                  h3 Mailbox Sensor
-                  p Place in mailbox
+                img(src='/img/sensor_300x300_01.png', alt='')
+                .carousel-caption.carousel-caption-custom
+                  if lang == 'fr'
+                    h3 
+                      | Détecteur 
+                      br
+                      | de courrier
+                    h5 Mettre en boîte aux lettres 
+                  else
+                    h3 Mail Sensor
+                    h5 Place in mailbox
               .item
-                img(src='/img/sphone4.jpg', alt='')
-                .carousel-caption
-                  h3 Smartphone App
-                  p iOS or Android
+                if lang == 'fr'
+                  img(src='/img/sphone_fr.png', alt='')
+                else
+                  img(src='/img/sphone_en.png', alt='')
+                .carousel-caption.carousel-caption-custom
+                  if lang == 'fr'
+                    h3 Application mobile                
+                    h5 iOS ou Android
+                  else        
+                    h3 Smartphone App
+                    h5 iOS or Android
+        
         // /col-lg-8
       // /row
     .container
