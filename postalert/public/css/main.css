@@ -158,3 +158,19 @@ i {
 .whitetext {
     color: white;
 }
+
+.right {
+    text-align: right;
+}
+
+
+.carousel-indicators-custom  li{
+  border: 1px solid #A0A0A0;
+}
+
+.carousel-caption-custom {
+  right: -25%;
+  color: grey;
+  text-align: center;
+  text-shadow: none;
+}
