@@ -48,7 +48,7 @@ html(lang='en')
                 h1
                   | PostAlert sera disponible au printemps 2015
                 h4.whitetext
-                  | Pré-commande maintenant (pas de carte de crédit nécessaire) d'avoir le prix de lancement de 99 $ (régulier 120 $)   
+                  | Pré-commande maintenant (pas de carte de crédit nécessaire) d'avoir le prix de lancement de #{price} $ (régulier #{regPrice} $)   
                   h4
                     form#form4(role='form', name='form4', accept-charset='UTF-8', autocomplete='off', enctype='multipart/form-data', method='post', novalidate='', action='https://kolabria.wufoo.com/forms/rtjllwv1yirkz8/#public')
                       .form-group
@@ -58,16 +58,18 @@ html(lang='en')
                       .form-group
                         input#Field5.form-control(name='Field5', type='email', spellcheck='false', value='', maxlength='255', tabindex='3', placeholder='courrier électronique')
                         
-                      button#saveForm.btn.btn-warning.btn-lg(name='saveForm', type='submit', value='Submit', onclick='mixpanel.track("PreOrder",{"lang": "#{lang}"})') Précommander
+                      button#saveForm.btn.btn-warning.btn-lg(name='saveForm', type='submit', value='Submit', onclick='mixpanel.track("PreOrder",{"lang": "#{lang}", "price": "#{price}", "regPrice": "#{regPrice}"})') Précommander
                       input#idstamp(type='hidden', name='idstamp', value='h7k76izzbYnSPx2te6zvCH4H9BzF2VvF44I4mEY+kpg=')
                       input#Field7(type='hidden', name='Field7', value='#{lang}', maxlength='255' )  
+                      input#Field9(type='hidden', name='Field9', value='#{price}', maxlength='255' ) 
+                      input#Field10(type='hidden', name='Field10', value='#{regPrice}', maxlength='255' ) 
             else
               h1
                 | PostAlert will be available
                 br
                 | in spring 2015
               h4.whitetext
-                | Pre-order now (no credit card required) to lock in the introductory price of $99 (regular $120)   
+                | Pre-order now (no credit card required) to lock in the introductory price of $#{price} (regular $#{regPrice})   
                 h4
                   form#form4(role='form', name='form4', accept-charset='UTF-8', autocomplete='off', enctype='multipart/form-data', method='post', novalidate='', action='https://kolabria.wufoo.com/forms/rtjllwv1yirkz8/#public')
                     .form-group
@@ -76,9 +78,11 @@ html(lang='en')
                       input#Field4.form-control(name='Field4', type='text', value='', maxlength='255', tabindex='2', onkeyup='', placeholder='Postal Code')
                     .form-group
                       input#Field5.form-control(name='Field5', type='email', spellcheck='false', value='', maxlength='255', tabindex='3', placeholder='Email address')
-                    button#saveForm.btn.btn-warning.btn-lg(name='saveForm', type='submit', value='Submit', onclick='mixpanel.track("PreOrder")') Pre-Order
+                    button#saveForm.btn.btn-warning.btn-lg(name='saveForm', type='submit', value='Submit', onclick='mixpanel.track("PreOrder",{"lang": "#{lang}", "price": "#{price}", "regPrice": "#{regPrice}"})') Pre-Order
                     input#idstamp(type='hidden', name='idstamp', value='h7k76izzbYnSPx2te6zvCH4H9BzF2VvF44I4mEY+kpg=')  
-                    input#Field7(type='hidden', name='Field7', value='#{lang}', maxlength='255' )       
+                    input#Field7(type='hidden', name='Field7', value='#{lang}', maxlength='255' )    
+                    input#Field9(type='hidden', name='Field9', value='#{price}', maxlength='255' ) 
+                    input#Field10(type='hidden', name='Field10', value='#{regPrice}', maxlength='255' )    
           // /col-lg-6
           .col-lg-6
             if lang == 'fr'

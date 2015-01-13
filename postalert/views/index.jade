@@ -50,8 +50,8 @@ html(lang='en')
                  br
                  | à votre boîte postale.
                h4.whitetext  Soyez avisé sur votre téléphone lorsque vous recevez du courrier 
-               h4.whitetext  Seulement 99$ (habituellement 120$)
-               a.btn.btn-warning.btn-lg(href='/signup',onclick='mixpanel.track("BuyNow",{"place": "top", "lang": "#{lang}"})')
+               h4.whitetext  Seulement #{price}$ (habituellement #{regPrice}$)
+               a.btn.btn-warning.btn-lg(href='/signup',onclick='mixpanel.track("BuyNow",{"place": "top", "lang": "#{lang}"}, "price": "#{price}", "regPrice": "#{regPrice}")')
                  b Acheter
             else
                 h1
@@ -59,8 +59,8 @@ html(lang='en')
                   br
                   | to an empty mailbox
                 h4.whitetext  Get notified on your phone when your have mail. 
-                h4.whitetext  Only $99 (regular $120)
-                a.btn.btn-warning.btn-lg(href='/signup',onclick='mixpanel.track("BuyNow",{"place": "top", "lang": "#{lang}"})')
+                h4.whitetext  Only $#{price} (regular $#{regPrice})
+                a.btn.btn-warning.btn-lg(href='/signup',onclick='mixpanel.track("BuyNow",{"place": "top", "lang": "#{lang}", "price": "#{price}", "regPrice": "#{regPrice}"})')
                   b Buy Now!
           // /col-lg-6
           .col-lg-6
@@ -128,7 +128,7 @@ html(lang='en')
       hr
       .row.centered
         .col-lg-6.col-lg-offset-3
-          a.btn.btn-warning.btn-lg(href='/signup',onclick='mixpanel.track("BuyNow",{"place": "middle", "lang": "#{lang}"})')
+          a.btn.btn-warning.btn-lg(href='/signup',onclick='mixpanel.track("BuyNow",{"place": "middle", "lang": "#{lang}", "price": "#{price}", "regPrice": "#{regPrice}"})')
             if lang == 'fr'
               b Acheter
             else      
@@ -207,7 +207,7 @@ html(lang='en')
       hr
       .row.centered
         .col-lg-6.col-lg-offset-3
-          a.btn.btn-warning.btn-lg(href='/signup',onclick='mixpanel.track("BuyNow",{"place": "bottom", "lang": "#{lang}"})')
+          a.btn.btn-warning.btn-lg(href='/signup',onclick='mixpanel.track("BuyNow",{"place": "bottom", "lang": "#{lang}", "price": "#{price}", "regPrice": "#{regPrice}"})')
             if lang == 'fr'
               b Acheter
              else      

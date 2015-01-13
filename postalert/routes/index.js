@@ -9,15 +9,18 @@ var supported = ["en","fr"];
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  console.log('index '); 
-  console.log('referer: ',req.headers.referer);
+  //console.log('index '); 
+  //console.log('referer: ',req.headers.referer);
   if (!req.session.lang) {
       req.session.lang = req.locale;
-      console.log("The best match is: " + req.locale);
+      //console.log("The best match is: " + req.locale);
   }
-   
+  req.session.price = "99"; 
+  req.session.regPrice = "120";
   res.render('index',{
-      lang: req.session.lang
+      lang: req.session.lang,
+      price: req.session.price,
+      regPrice: req.session.regPrice
   });
 
 });
@@ -66,17 +69,21 @@ router.get('/:pc?', function(req, res) {
 */
 /* GET signup page. */
 router.get('/signup/:lang?', function(req, res) {
-
+   if (!req.session)
+       redirect('/');
    if (req.params.lang)
      req.session.lang = req.params.lang;
   res.render('signup',{
-      lang: req.session.lang
+      lang: req.session.lang,
+      price: req.session.price,
+      regPrice: req.session.regPrice   
   });
 });
 
 /* GET thankyou page.  -   need this for forms */
 router.get('/thankyou/:lang?', function(req, res) {
-
+  if (!req.session)
+        redirect('/');
   if (req.params.lang)
     req.session.lang = req.params.lang;
   res.render('thankyou',{
@@ -86,7 +93,8 @@ router.get('/thankyou/:lang?', function(req, res) {
 
 /* post thankyou page. */
 router.post('/po', function(req, res) {
-  
+  if (!req.session)
+     redirect('/');
   res.render('thankyou',{
       lang: req.session.lang
   });
@@ -95,13 +103,17 @@ router.post('/po', function(req, res) {
 
 
 router.get('/:lang?', function(req, res) {    
-    console.log('url: ',req.url);
-    console.log('referer: ',req.headers.referer);
-  console.log('lang pref', req.params.lang); 
+   // console.log('url: ',req.url);
+//    console.log('referer: ',req.headers.referer);
+//  console.log('lang pref', req.params.lang); 
+  if (!req.session)
+     redirect('/');
   req.session.lang = req.params.lang;
-    
+
   res.render('index',{
-      lang: req.session.lang
+      lang: req.session.lang,
+      price: req.session.price,
+      regPrice: req.session.regPrice    
   });
 
 });
