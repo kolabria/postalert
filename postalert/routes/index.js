@@ -15,7 +15,7 @@ router.get('/', function(req, res) {
       req.session.lang = req.locale;
       //console.log("The best match is: " + req.locale);
   }
-  req.session.price = "99"; 
+  req.session.price = "89"; 
   req.session.regPrice = "120";
   res.render('index',{
       lang: req.session.lang,
