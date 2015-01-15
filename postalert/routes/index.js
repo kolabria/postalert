@@ -71,7 +71,7 @@ router.get('/:pc?', function(req, res) {
 router.get('/signup/:lang?', function(req, res) {
    if (!req.session)
        redirect('/');
-   if (req.params.lang)
+   if (req.params.lang == 'fr' || req.params.lang == 'en')
      req.session.lang = req.params.lang;
   res.render('signup',{
       lang: req.session.lang,
@@ -84,7 +84,7 @@ router.get('/signup/:lang?', function(req, res) {
 router.get('/thankyou/:lang?', function(req, res) {
   if (!req.session)
         redirect('/');
-  if (req.params.lang)
+  if (req.params.lang == 'fr' || req.params.lang == 'en')
     req.session.lang = req.params.lang;
   res.render('thankyou',{
       lang: req.session.lang
@@ -108,7 +108,8 @@ router.get('/:lang?', function(req, res) {
 //  console.log('lang pref', req.params.lang); 
   if (!req.session)
      redirect('/');
-  req.session.lang = req.params.lang;
+  if (req.params.lang == 'fr' || req.params.lang == 'en')
+     req.session.lang = req.params.lang;
 
   res.render('index',{
       lang: req.session.lang,
